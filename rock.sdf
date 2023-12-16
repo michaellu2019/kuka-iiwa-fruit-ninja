@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="rock">
+    <link name="rock">
+        <pose>0 0 0 0 0 0</pose>
+
+        <inertial>
+            <inertia>
+                <ixx>0.000117</ixx>
+                <ixy>0</ixy>
+                <iyy>0.000117</iyy>
+                <iyz>0</iyz>
+                <izz>0.000225</izz>
+                <ixz>0</ixz>
+            </inertia>
+            <mass>0.5</mass>
+        </inertial>
+
+        <visual name="visual">
+
+            <geometry>
+            <cylinder>
+                <radius>0.03</radius>
+                <length>0.01</length>
+            </cylinder>
+            </geometry>
+
+            <material>
+                <diffuse>0.25 0.25 0.25 1.0</diffuse>
+            </material>
+
+        </visual>
+        <collision name="collision">
+        
+            <geometry>
+            <cylinder>
+                <radius>0.03</radius>
+                <length>0.01</length>
+            </cylinder>
+            </geometry>
+        
+            <surface>
+                <friction>
+                    <ode>
+                        <mu>100</mu>
+                        <mu2>100</mu2>
+                        <fdir1>0 0 0</fdir1>
+                        <slip1>0</slip1>
+                        <slip2>0</slip2>
+                    </ode>
+                </friction>
+            </surface>
+
+        </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<sdf xmlns:drake="http://drake.mit.edu" version="1.8">
+  <model name='halfsphere1'>
+    <link name='halfsphere1'>
+      <inertial>
+        <pose>0.9357830552797691 3.299388557172983e-08 -1.2065254920299865e-08 0 0 0</pose>
+        <mass>32436.154875616987 * .0001</mass>
+        <inertia>
+          <ixx>80518.42685687957  * .0001</ixx>
+          <ixy>-8.692195614156981e-05 * .0001</ixy>
+          <ixz>-0.0003185477571318459 * .0001</ixz>
+          <iyy>52256.47429241238 * .0001</iyy>
+          <iyz>-1.0368555255213966e-05 * .0001</iyz>
+          <izz>52256.47401399522 * .0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>halfsphere.obj</uri>
+            <scale>.025 .025 .025</scale>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>.1 .9 .1 1</ambient> <!-- RGBA color for the sphere (red in this case) -->
+            <diffuse>.1 .9 .1 1</diffuse>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>halfsphere.obj</uri>
+            <scale>.025 .025 .025</scale>
+          </mesh>
+        </geometry>
+        <!-- The proximity properties immediately below enable the hydroelastic
+             contact model for this body. To use point contact instead, delete
+             or comment out the <drake:rigid_hydroelastic> element. -->
+        <drake:proximity_properties>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.5</drake:mu_static>
+          <drake:rigid_hydroelastic/>
+        </drake:proximity_properties>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,45 @@
+<?xml version='1.0'?>
+<sdf xmlns:drake="http://drake.mit.edu" version="1.8">
+  <model name='half_yellow2'>
+    <link name='half_yellow2'>
+      <inertial>
+        <pose>0.9372024077885059 3.099431558204734e-18 -2.4964125250944758e-17 0 0 0</pose>
+        <mass>32674.868286786834</mass>
+        <inertia>
+          <ixx>81587.6360589381</ixx>
+          <ixy>2.4390349213781085e-13</ixy>
+          <ixz>-2.3573582663820686e-12</ixz>
+          <iyy>52912.06409975279</iyy>
+          <iyz>-1.3141126126062465e-06</iyz>
+          <izz>52912.0660641626</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>half_yellow.obj</uri>
+            <scale>.025 .025 .025</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>half_yellow.obj</uri>
+            <scale>.025 .025 .025</scale>
+          </mesh>
+        </geometry>
+        <!-- The proximity properties immediately below enable the hydroelastic
+             contact model for this body. To use point contact instead, delete
+             or comment out the <drake:rigid_hydroelastic> element. -->
+        <drake:proximity_properties>
+          <drake:mu_dynamic>0.5</drake:mu_dynamic>
+          <drake:mu_static>0.5</drake:mu_static>
+          <drake:rigid_hydroelastic/>
+        </drake:proximity_properties>
+      </collision>
+    </link>
+  </model>
+</sdf>

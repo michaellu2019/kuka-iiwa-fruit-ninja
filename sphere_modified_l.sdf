@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="unit_sphere">
+        <link name="link">
+            <visual name="visual">
+                <geometry>
+                    <sphere>
+                        <radius>0.05</radius> <!-- Adjust the radius as needed -->
+                    </sphere>
+                </geometry>
+                <material>
+                    <ambient>1 0 0 1</ambient> <!-- RGBA color for the sphere (red in this case) -->
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>
